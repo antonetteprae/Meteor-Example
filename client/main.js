@@ -1,22 +1,17 @@
 
-
-//import './main.html';
-import '../imports/ui/body.js';
-
-/*Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+var count = 0
+Router.route('/', function () {
+  // render the Home template with a custom data context
+  var xxx = 'nnn'
+  let userAgent = window.navigator.userAgent
+  count++;
+  this.render('Home', {data: {title: count}});
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+// when you navigate to "/one" automatically render the template named "One".
+Router.route('/one', function() {
+ this.render('One', {data: {example: count}})	
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});*/
+// when you navigate to "/two" automatically render the template named "Two".
+Router.route('/two');

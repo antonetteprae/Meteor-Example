@@ -1,4 +1,45 @@
 <head>
-  <title>simple</title>
+  <title>basic</title>
 </head>
 
+<body>
+</body>
+
+<template name="Home">
+  {{> Nav}}
+
+  <h1>Home</h1>
+
+  <p>
+    Data Title: {{title}}
+  </p>
+
+ 
+</template>
+
+<template name="One">
+  {{> Nav}}
+
+  <h1>Page One</h1>
+  Data from: {{example}}
+</template>
+
+<template name="Two">
+  {{> Nav}}
+
+  <h1>Page Two</h1>
+</template>
+
+<template name="Nav">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/one">Page Onexxxx</a>
+    </li>
+    <li>
+      <a href="/two">Page Two</a>
+    </li>
+  </ul>
+</template>

@@ -1,45 +1,87 @@
 <head>
-  <title>basic</title>
+  <title>Activity Logs</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body>
 </body>
 
 <template name="Home">
-  {{> Nav}}
-
-  <h1>Home</h1>
-
-  <p>
-    Data Title: {{title}}
-  </p>
-
- 
+  {{> Nav2}}
+  <div class="container">
+    <h1>Graph</h1>
+    <p>
+      Count user : {{title}} <br> 
+      Browser name : {{browser}}
+    </p>
+    
+    <script>
+      //--- Chart
+      $(function () { 
+        var myChart = Highcharts.chart('mychart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Browser'
+            },
+            xAxis: {
+                categories: ['Chrome', 'Safari', 'Firefox']
+            },
+            yAxis: {
+                title: {
+                    text: 'Fruit eaten'
+                }
+            },
+            series: [{
+                name: 'Jane',
+                data: [1, 0, 4]
+            }, {
+                name: 'John',
+                data: [5, 7, 3]
+            }]
+        });
+      });
+    </script>
+    <div id="mychart" style="width:100%; height:400px;"></div>
+  </div>
 </template>
 
-<template name="One">
-  {{> Nav}}
-
-  <h1>Page One</h1>
-  Data from: {{example}}
-</template>
-
-<template name="Two">
-  {{> Nav}}
-
-  <h1>Page Two</h1>
+<template name="Details">
+  {{> Nav2}}
+  <div class="container">
+    <h1>Details</h1>
+      <p>
+         Count user : {{title}} <br> 
+        Browser name : {{browser}}
+      </p>
+  </div>
 </template>
 
 <template name="Nav">
   <ul>
     <li>
-      <a href="/">Home</a>
+      <a href="/">Graph</a>
     </li>
     <li>
-      <a href="/one">Page Onexxxx</a>
-    </li>
-    <li>
-      <a href="/two">Page Two</a>
+      <a href="/details">Details</a>
     </li>
   </ul>
 </template>
+
+<template name="Nav2">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Graph</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/details">Details</a>
+    </li>
+  </ul>
+</template>
+
+

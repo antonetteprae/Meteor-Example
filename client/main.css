@@ -1,8 +1,8 @@
 /* CSS declarations go here */
 body {
   font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-color: #318159;
+  background-image: linear-gradient(to bottom, #318159, #918e82 100%);
   background-attachment: fixed;
  
   position: absolute;
@@ -14,9 +14,13 @@ body {
   padding: 0;
   margin: 0;
  
-  font-size: 14px;
+  font-size: 16px;
 }
- 
+
+.container {
+  margin-top: 20px;
+}
+/*
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -33,7 +37,7 @@ header {
  
 #login-buttons {
   display: block;
-}
+}*/
  
 h1 {
   font-size: 1.5em;
@@ -66,9 +70,9 @@ form {
 ul {
   margin: 0;
   padding: 0;
-  background: white;
+  background: rgb(1, 43, 1);
 }
- 
+/*
 .delete {
   float: right;
   font-weight: bold;
@@ -77,12 +81,13 @@ ul {
   border: none;
   position: relative;
 }
+*/
  
 li {
   position: relative;
   list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
+  padding: 5px;
+  /*border-bottom: #eee solid 1px;*/
 }
  
 li .text {
@@ -101,6 +106,7 @@ li.private {
   background: #eee;
   border-color: #ddd;
 }
+.nav-link{ font-size: 18px}
  
 header .hide-completed {
   float: right;

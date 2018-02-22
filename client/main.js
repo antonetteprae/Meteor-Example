@@ -9,6 +9,12 @@ Router.route('/', function () {
 //   const data = Tasks.find({}).count()
 //   Tasks.insert({ browser: ""});
 //   console.log('>>', JSON.stringify(data));
+let chromeTotal = Tasks.find({ browser: "chrome"}).count();
+let safariTotal = Tasks.find({ browser: "safari"}).count();
+let firefoxTotal = Tasks.find({ browser: "firefox"}).count();
+let ieTotal = Tasks.find({ browser: "ie"}).count();
+let edgeTotal = Tasks.find({ browser: "edge"}).count();
+let othersTotal = Tasks.find({ browser: "other-browser"}).count();
 if (Meteor.isClient) {
       Meteor.defer(function() {
         // Create standard Highcharts chart with options:
@@ -29,7 +35,7 @@ if (Meteor.isClient) {
           },
           series: [{
               name: 'Client',
-              data: [1, 0, 4, 3, 3, 3]
+              data: [chromeTotal, safariTotal, firefoxTotal, ieTotal, edgeTotal, othersTotal]
           }]
         });
       });

@@ -6,9 +6,9 @@ import Highcharts from 'highcharts';
 var count = 0
 Router.route('/', function () {
   // render the Home template with a custom data context
-//   const data = Tasks.find({}).count()
-//   Tasks.insert({ browser: ""});
-//   console.log('>>', JSON.stringify(data));
+  const browser_name = getBrowserName()
+  Tasks.insert({ browser: browser_name});
+
 let chromeTotal = Tasks.find({ browser: "chrome"}).count();
 let safariTotal = Tasks.find({ browser: "safari"}).count();
 let firefoxTotal = Tasks.find({ browser: "firefox"}).count();

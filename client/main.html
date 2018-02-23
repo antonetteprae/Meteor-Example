@@ -22,13 +22,11 @@
   <div class="container">
     <h1>Details</h1>
       <p>
-        Browser name : {{browser}}
+        Browser current : {{browser}}
       </p>
-      <ul>
         {{#each browsers}}
-          <li><span>{{_id}}</span> : <span>{{browser}}</span></li>
+          <span>client : {{_id}}</span> | browser type : <span>{{browser}}</span><br>
         {{/each}}
-      </ul>
   </div>
 </template>
 

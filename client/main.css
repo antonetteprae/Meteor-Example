@@ -70,7 +70,7 @@ form {
 ul {
   margin: 0;
   padding: 0;
-  background: rgb(1, 43, 1);
+  background: #276747 ;
 }
 /*
 .delete {
@@ -89,6 +89,8 @@ li {
   padding: 5px;
   /*border-bottom: #eee solid 1px;*/
 }
+
+li a{ color: navy}
  
 li .text {
   margin-left: 10px;
